@@ -1,0 +1,50 @@
+{
+    "qweather_api_key": {
+        "description": "和风天气 API Key",
+        "type": "string",
+        "default": "",
+        "hint": "在 https://console.qweather.com 注册并申请获取"
+    },
+    "qweather_api_host": {
+        "description": "和风天气 API Host",
+        "type": "string",
+        "default": "",
+        "hint": "每个用户的 Host 不同，请在和风控制台「项目」中查看，如 api.qweather.com 或 devapi.qweather.com，不能使用他人的 Host"
+    },
+    "amap_api_key": {
+        "description": "高德地图 Web 服务 API Key",
+        "type": "string",
+        "default": "",
+        "hint": "在 https://lbs.amap.com 申请 Web 服务 Key，用于地理编码"
+    },
+    "default_forecast_days": {
+        "description": "每日预报天数",
+        "type": "int",
+        "default": 3,
+        "hint": "范围 1-7。LLM 调用 get_daily_forecast 工具未指定天数时使用此默认值"
+    },
+    "default_hourly_hours": {
+        "description": "逐小时预报小时数",
+        "type": "int",
+        "default": 12,
+        "hint": "范围 1-24。LLM 调用 get_hourly_forecast 工具未指定小时数时使用此默认值"
+    },
+    "request_timeout": {
+        "description": "HTTP 请求超时时间（秒）",
+        "type": "int",
+        "default": 15,
+        "hint": "请求和风天气与高德地图 API 的超时时间"
+    },
+    "geo_cache_max_entries": {
+        "description": "地理编码缓存最大保存条数",
+        "type": "int",
+        "default": 20,
+        "hint": "查询过的地点会长期保存在文件 data/plugin_data/astrbot_plugin_qweather/geo_cache.json 中（不占用内存），下次查询相同地点不再请求高德API；超出上限自动覆盖最早保存的记录，0 表示不限制"
+    },
+    "version": {
+        "description": "插件版本",
+        "type": "string",
+        "default": "3.1.1",
+        "invisible": true
+    }
+}

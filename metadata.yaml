@@ -1,0 +1,20 @@
+name: astrbot_plugin_qweather
+display_name: 天气查询助手
+short_desc: 基于高德地图+和风天气的智能天气查询插件，支持命令和LLM自主调用。
+desc: |
+  基于高德地图地理编码和和风天气API的智能天气查询插件。
+  
+  功能特性：
+  - 支持实时天气、每日预报（最多7天）、逐小时预报查询
+  - 支持 /weather 命令调用
+  - 支持 LLM 自主调用（Tool Calling）
+  - 三个独立 LLM 工具：get_current_weather（实时）/ get_daily_forecast（每日）/ get_hourly_forecast（逐小时）
+  - 使用高德地图API进行地理编码，不依赖和风天气GeoAPI
+  - 地理编码结果长期保存至文件（不占用内存，条数可配置，默认20条，超出自动覆盖最早记录），重复查询不再请求高德API
+  - 完善的日志记录和错误处理
+  
+  使用前请配置：和风天气API Key、和风天气API Host、高德地图API Key
+version: 3.1.1
+author: aName2262
+repo: https://github.com/aName2262/astrbot_plugin_qweather
+astrbot_version: ">=4.5.7"
